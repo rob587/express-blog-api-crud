@@ -3,31 +3,21 @@ const router = express.Router()
 
 
 
-router.get('/', (req, res)=>{
-    res.send('La mia Pasticceria')
-})
+router.get('/', )
 
 // index
-router.get('/posts', (req, res)=>{
-    res.send('elenco dei post')
-})
+router.get('/posts', )
 
 // show
-router.get('/posts/:id', (req, res)=>{
-    res.send(`dettaglio del post con id: ${req.params.id}`)
-})
+router.get('/posts/:id', )
 
 // create
 
-router.post('/posts', (req,res)=>{
-    res.send('creazione del post')
-})
+router.post('/posts', )
 
 // update
 
-router.put('/posts/:id', (req,res)=>{
-    res.send(`modifica totale del post con id: ${req.params.id} `)
-})
+router.put('/posts/:id', )
 
 // patch
 
@@ -37,9 +27,7 @@ router.patch('/posts/:id',(req,res)=>{
 
 // delete
 
-router.delete('/posts/:id', (req,res)=>{
-    res.send(`Cancella post con id ${req.params.id}`)
-})
+router.delete('/posts/:id',)
 
 
 
