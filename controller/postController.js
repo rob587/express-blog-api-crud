@@ -24,6 +24,9 @@ function show (req, res){
     const finder = posts.find(item=> item.id === id)
 
     if(!finder) {
+
+        res.status(404)
+
         return res.json({
             erro: 'Non trovato',
             message: 'Post non trovato'
