@@ -1,6 +1,8 @@
 const express = require("express")
 const router = express.Router()
 
+const menu = require('../data/posts.js')
+
 
 const postController = require('../controller/postController.js')
 
@@ -11,6 +13,7 @@ router.get('/', (req, res) =>{
 
 // index
 router.get('/posts', postController.index )
+   
 
 // show
 router.get('/posts/:id', postController.show )
