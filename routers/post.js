@@ -21,9 +21,7 @@ router.put('/posts/:id', )
 
 // patch
 
-router.patch('/posts/:id',(req,res)=>{
-    res.send(`modifica parziale del post con id ${req.params.id}`)
-})
+router.patch('/posts/:id',)
 
 // delete
 

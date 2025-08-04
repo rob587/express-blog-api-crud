@@ -9,19 +9,23 @@ function show (req, res){
 }
 
 function store (req, res){
-    (req,res)=>{
+    
     res.send('creazione del post')
-}}
+}
 
 function update (req, res){
-    (req,res)=>{
+    
     res.send(`modifica totale del post con id: ${req.params.id} `)
-}}
+}
+
+function patch (req, res) {
+    res.send(`modifica parziale del post con id ${req.params.id}`)
+}
 
 function destroy (req, res){
-    (req,res)=>{
+    
     res.send(`Cancella post con id ${req.params.id}`)
 }
-}
 
-module.exports = {index, show, store, update, destroy}
+
+module.exports = {index, show, store, update, patch, destroy}
