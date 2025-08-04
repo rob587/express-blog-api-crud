@@ -52,7 +52,25 @@ function modify (req, res) {
 
 function destroy (req, res){
     
-    res.send(`Cancella post con id ${req.params.id}`)
+     const id = parseInt(req.params.id)
+    const finder = posts.find(item=> item.id === id)
+
+    if(!finder) {
+
+        res.status(404)
+
+        return res.json({
+            erro: 'Non trovato',
+            message: 'Post non trovato'
+        })
+    }
+
+    posts.splice(posts.indexOf(posts), 1)
+
+    console.log(posts)
+
+    res.sendStatus(204)
+
 }
 
 
