@@ -2,30 +2,34 @@ const express = require("express")
 const router = express.Router()
 
 
+const postController = require('../controller/postController.js')
 
-router.get('/', )
+
+router.get('/', (req, res) =>{
+    res.send('La mia Pasticceria')
+})
 
 // index
-router.get('/posts', )
+router.get('/posts', postController.index )
 
 // show
-router.get('/posts/:id', )
+router.get('/posts/:id', postController.show )
 
 // create
 
-router.post('/posts', )
+router.post('/posts', postController.store )
 
 // update
 
-router.put('/posts/:id', )
+router.put('/posts/:id', postController.update )
 
 // patch
 
-router.patch('/posts/:id',)
+router.patch('/posts/:id', postController.modify)
 
 // delete
 
-router.delete('/posts/:id',)
+router.delete('/posts/:id', postController.destroy)
 
 
 

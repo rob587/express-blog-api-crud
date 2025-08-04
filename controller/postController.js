@@ -18,7 +18,7 @@ function update (req, res){
     res.send(`modifica totale del post con id: ${req.params.id} `)
 }
 
-function patch (req, res) {
+function modify (req, res) {
     res.send(`modifica parziale del post con id ${req.params.id}`)
 }
 
@@ -28,4 +28,4 @@ function destroy (req, res){
 }
 
 
-module.exports = {index, show, store, update, patch, destroy}
+module.exports = {index, show, store, update, modify, destroy}
