@@ -1,4 +1,5 @@
 const menu = require('../routers/post.js')
+const posts = require('../data/posts.js')
 
 function index (req, res){
      res.send('elenco dei post')
