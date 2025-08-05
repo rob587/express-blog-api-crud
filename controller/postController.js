@@ -6,7 +6,7 @@ const posts = require('../data/posts.js')
 function index (req, res){
     // const tags = req.query.tag
 
-    // let filteredTags
+    // let filteredTags = posts
 
     // if(tags != undefined){
     //     filteredTags = menu.filter((item)=>{
