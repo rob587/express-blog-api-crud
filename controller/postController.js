@@ -90,27 +90,24 @@ function update (req, res){
 
 function modify (req, res) {
 
-    //      const id = parseInt(req.params.id)
-    // const finder = posts.find(item=> item.id === id)
+         const id = parseInt(req.params.id)
+    const finder = posts.find(item=> item.id === id)
 
-    // if(!finder) {
+    if(!finder) {
 
-    //     res.status(404)
+        
 
-    //     return res.json({
-    //         erro: 'Non trovato',
-    //         message: 'Post non trovato'
-    //     })
-    // }
+        return res.json({
+            erro: 'Non trovato',
+            message: 'Post non trovato'
+        })
+    }
 
-    // posts.title = req.body.title
+    finder.tags = req.body.tags
 
-    // console.log(posts)
+    console.log(posts)
 
-
-
-
-    // res.send(post)
+    res.json(finder)
 }
 
 function destroy (req, res){
