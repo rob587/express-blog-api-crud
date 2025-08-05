@@ -4,20 +4,23 @@ const posts = require('../data/posts.js')
 
  
 function index (req, res){
-    // const tags = req.query.tag
+    const tag = req.query.tag
 
-    // let filteredTags = posts
 
-    // if(tags != undefined){
-    //     filteredTags = menu.filter((item)=>{
-    //         return item.tags.includes(tags.toLowerCase)
-    //     })
-    // }
-    // else{
+    let filteredTags = posts
 
-    // }
-     res.json(posts)
-}
+    if(tag){
+        filteredTags = posts.filter(item =>{
+            const lowerTags = item.tags.map(tag => tag.toLowerCase()).includes(tag.toLowerCase())
+
+            // return lowerTags
+            })
+        }
+
+        res.json(posts)
+    }
+
+
 
 function show (req, res){
     const id = parseInt(req.params.id)
@@ -37,8 +40,23 @@ function show (req, res){
 }
 
 function store (req, res){
+
+    console.log(req.body)
+
+
+    const newId = posts[posts.length - 1].id + 1 
+
+   const newPosts = {
+    id: newId,
+    title: req.body.title,
+    tags: req.body.tags
+   }
+
+    posts.push(newPosts)
+
+    console.log(posts)
     
-    res.send('creazione del post')
+    res.status(201).json(newPosts)
 }
 
 function update (req, res){
