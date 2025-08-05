@@ -60,8 +60,32 @@ function store (req, res){
 }
 
 function update (req, res){
+
+    const id = parseInt(req.params.id)
+    const finder = posts.find(item=> item.id === id)
+
+    if(!finder) {
+
+        res.status(404)
+
+        return res.json({
+            erro: 'Non trovato',
+            message: 'Post non trovato'
+        })
+    }
+
+
+    const {title, tags} = req.body
+
+    posts.title = req.body.title
+    posts.tags = req.body.tags
+
+    console.log(posts)
+
+
+    res.send(finder)
     
-    res.send(`modifica totale del post con id: ${req.params.id} `)
+    // res.send(`modifica totale del post con id: ${req.params.id} `)
 }
 
 function modify (req, res) {
