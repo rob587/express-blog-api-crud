@@ -1,4 +1,4 @@
-const menu = require('../routers/post.js')
+const menu = require('../routers/postRouter.js')
 const posts = require('../data/posts.js')
 
 
@@ -66,12 +66,12 @@ function update (req, res){
 
     if(!finder) {
 
-        res.status(404)
+    res.status(404)
 
-        return res.json({
-            erro: 'Non trovato',
-            message: 'Post non trovato'
-        })
+    return res.json({
+        erro: 'Non trovato',
+        message: 'Post non trovato'
+    })
     }
 
 
@@ -90,17 +90,17 @@ function update (req, res){
 
 function modify (req, res) {
 
-         const id = parseInt(req.params.id)
+    const id = parseInt(req.params.id)
     const finder = posts.find(item=> item.id === id)
 
     if(!finder) {
 
         
 
-        return res.json({
-            erro: 'Non trovato',
-            message: 'Post non trovato'
-        })
+    return res.json({
+        erro: 'Non trovato',
+        message: 'Post non trovato'
+    })
     }
 
     finder.tags = req.body.tags
@@ -117,11 +117,11 @@ function destroy (req, res){
 
     if(!finder) {
 
-        res.status(404)
+    res.status(404)
 
         return res.json({
-            erro: 'Non trovato',
-            message: 'Post non trovato'
+        erro: 'Non trovato',
+        message: 'Post non trovato'
         })
     }
 
