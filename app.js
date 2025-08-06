@@ -11,9 +11,16 @@ app.use(express.static('public'))
 
 app.use('/', postRouter ) 
 
+const errorsHandler = require('./middlewares/errorsHandlers.js')
+const notFound = require('./middlewares/notFound.js')
 
 
+
+app.use(errorsHandler)
+
+app.use(notFound)
 
 app.listen(port, ()=>{
     console.log('server della mia pasticceria')
 })
+

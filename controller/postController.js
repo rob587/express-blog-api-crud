@@ -6,6 +6,8 @@ const posts = require('../data/posts.js')
 function index (req, res){
     const tag = req.query.tag
 
+    
+
 
     let filteredTags = posts
 
